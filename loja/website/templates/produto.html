@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Loja de Produtos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Loja de Produtos</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Carrinho</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Produtos Disponíveis</h2>
+            <div class="product-grid">
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300" alt="Produto 1">
+                    <h3>Produto 1</h3>
+                    <p>Descrição do produto 1. Um produto incrível e de alta qualidade.</p>
+                    <p class="price">R$ 99,90</p>
+                    <a href="#" class="btn">Comprar</a>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300" alt="Produto 2">
+                    <h3>Produto 2</h3>
+                    <p>Descrição do produto 2. Alta performance e durabilidade.</p>
+                    <p class="price">R$ 149,90</p>
+                    <a href="#" class="btn">Comprar</a>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300" alt="Produto 3">
+                    <h3>Produto 3</h3>
+                    <p>Descrição do produto 3. Para quem busca qualidade e eficiência.</p>
+                    <p class="price">R$ 199,90</p>
+                    <a href="#" class="btn">Comprar</a>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300" alt="Produto 4">
+                    <h3>Produto 4</h3>
+                    <p>Descrição do produto 4. Ideal para o seu dia a dia.</p>
+                    <p class="price">R$ 249,90</p>
+                    <a href="#" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Loja de Produtos - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+</body>
+</html>

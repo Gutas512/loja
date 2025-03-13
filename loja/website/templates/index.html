@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja do Seu Zé</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Loja do Seu Zé</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Carrinho</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção de destaque -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Bem-vindo à Loja do Seu Zé</h2>
+            <p>Produtos de qualidade com os melhores preços!</p>
+            <a href="#" class="btn">Veja os Produtos</a>
+        </div>
+    </section>
+
+    <!-- Seção de produtos em destaque -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Produtos em Destaque</h2>
+            <div class="product-cards">
+                <div class="product-card">
+                    <img src="https://cdn.leroymerlin.com.br/categories/televisao_cc32_300x300.jpg" alt="Produto 1">
+                    <h3>Televisão 40 Polegadas</h3>
+                    <p>Televisão de 40 polegadas com resolução Full HD, cores vibrantes e design moderno, ideal para uma experiência de entretenimento imersiva em qualquer ambiente.</p>
+                    <p class="price">R$ 99,90</p>
+                    <a href="#" class="btn">Comprar</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://lojamondial.vtexassets.com/arquivos/ids/157276/T-13_--1---1-.jpg?v=637654296598430000" alt="Produto 2">
+                    <h3>Torradeira</h3>
+                    <p>Torradeira compacta e eficiente, com ajuste de temperatura e funções práticas, perfeita para preparar torradas douradas e crocantes rapidamente.</p>
+                    <p class="price">R$ 149,90</p>
+                    <a href="#" class="btn">Comprar</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.tcdn.com.br/img/img_prod/1124863/nintendo_switch_oled_256gb_standard_cor_vermelho_neon_azul_neon_e_preto_12179_1_e164f7fa2ddfa0f7e8720f04c657a7e7.jpg" alt="Produto 3">
+                    <h3>Nintendo Switch</h3>
+                    <p>Console híbrido que oferece a flexibilidade de jogar em casa ou em movimento, com uma vasta biblioteca de jogos e controles intuitivos para uma diversão sem limites.</p>
+                    <p class="price">R$ 199,90</p>
+                    <a href="#" class="btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Loja do Seu Zé - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+</body>
+</html>
