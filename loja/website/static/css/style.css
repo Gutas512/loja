@@ -11,11 +11,13 @@ body {
     color: #333;
     background-color: #f4f4f4;
     line-height: 1.6;
+    font-size: 16px;
+    padding-top: 60px; /* Para não sobrepor o cabeçalho fixo */
 }
 
-/* Container para centralizar conteúdo */
+/* Container centralizado */
 .container {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
 }
 
@@ -24,11 +26,18 @@ header {
     background-color: #333;
     color: white;
     padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header .logo h1 {
     font-size: 36px;
     text-align: center;
+    font-weight: 700;
 }
 
 header nav ul {
@@ -45,7 +54,8 @@ header nav ul li {
 header nav ul li a {
     text-decoration: none;
     color: white;
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 18px;
     transition: color 0.3s ease;
 }
 
@@ -53,105 +63,57 @@ header nav ul li a:hover {
     color: #f8b400;
 }
 
-/* Seção de destaque */
-.hero {
-    background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
-    color: white;
-    padding: 80px 0;
+/* Seção principal com botões */
+.main-content {
     text-align: center;
+    margin-top: 100px; /* Para ajustar após o cabeçalho fixo */
 }
 
-.hero h2 {
-    font-size: 48px;
-    margin-bottom: 10px;
-    color: #000000
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #000000
-}
-
-.hero .btn {
-    background-color: #f8b400;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.hero .btn:hover {
-    background-color: #e68a00;
-}
-
-/* Seção de produtos em destaque */
-.featured-products {
-    padding: 50px 0;
-    background-color: #ffffff;
-}
-
-.featured-products h2 {
-    text-align: center;
+.main-content h2 {
     font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 18px;
+    color: #555;
     margin-bottom: 30px;
 }
 
-.product-cards {
+/* Botões modernos */
+.button-group {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
-.product-card {
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    width: 30%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-}
-
-.product-card img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-.product-card h3 {
-    margin-top: 15px;
-    font-size: 24px;
-}
-
-.product-card p {
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-.product-card .price {
-    font-size: 20px;
-    font-weight: bold;
-    color: #f8b400;
-}
-
-.product-card .btn {
-    background-color: #333;
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #f8b400, #ffa500);
     color: white;
-    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
-.product-card .btn:hover {
-    background-color: #555;
+.btn:hover {
+    background: linear-gradient(135deg, #e68a00, #cc7a00);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: scale(0.98);
 }
 
 /* Rodapé */
@@ -160,4 +122,115 @@ footer {
     color: white;
     padding: 20px 0;
     text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Tabela de pedidos */
+.tabela-pedidos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabela-pedidos th,
+.tabela-pedidos td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.tabela-pedidos th {
+    background-color: #f8b400;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tabela-pedidos tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabela-pedidos tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para o botão de voltar */
+.btn-voltar {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para formulários */
+form {
+    margin-top: 30px;
+}
+
+form button {
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-content {
+        margin-top: 120px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    header .logo h1 {
+        font-size: 30px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+    .tabela-pedidos th,
+    .tabela-pedidos td {
+        font-size: 14px;
+    }
 }

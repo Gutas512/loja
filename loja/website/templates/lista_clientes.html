@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes - Loja do Seu Zé</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Loja do Seu Zé</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'clientes' %}">Clientes</a></li>
+                    <li><a href="{% url 'produtos' %}">Produtos</a></li>
+                  <li><a href="{% url 'lista_pedidos' %}">Pedidos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Clientes Cadastrados</h2>
+
+            <!-- Botão de Voltar -->
+            <a href="{% url 'clientes' %}" class="btn-voltar">Voltar para Clientes</a>
+
+            <ul>
+                {% for cliente in clientes %}
+                    <li>
+                        <strong>{{ cliente.cli_nome }}</strong> - {{ cliente.cli_email }} - {{ cliente.cli_telefone }}
+                    </li>
+                {% empty %}
+                    <p>Nenhum cliente cadastrado.</p>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Loja do Seu Zé - Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

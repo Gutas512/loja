@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja do Seu Zé</title>
+    <title>Clientes - Loja do Seu Zé</title>
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
         <div class="container">
-            <h1 class="logo">Loja do Seu Zé</h1>
+            <h1>Loja do Seu Zé</h1>
             <nav>
-                <ul class="nav-list">
+                <ul>
                     <li><a href="{% url 'clientes' %}">Clientes</a></li>
                     <li><a href="{% url 'produtos' %}">Produtos</a></li>
                     <li><a href="{% url 'lista_pedidos' %}">Pedidos</a></li>
@@ -23,26 +22,25 @@
         </div>
     </header>
 
-    <!-- Seção Principal -->
     <main>
-        <div class="container main-content">
-            <h2>Bem-vindo à Loja do Seu Zé</h2>
-            <p>Escolha uma das opções abaixo para navegar pelo sistema:</p>
+        <div class="container">
+            <h2>Lista de Clientes</h2>
+            <p>Aqui você pode visualizar, cadastrar ou editar os clientes.</p>
 
+            <!-- Botões de Ação -->
             <div class="button-group">
-                <a href="{% url 'clientes' %}" class="btn">Clientes</a>
-                <a href="{% url 'produtos' %}" class="btn">Produtos</a>
-                <a href="{% url 'lista_pedidos' %}" class="btn">Pedidos</a>
-            </div>
-        </div>
+                <!-- Link para cadastrar um novo cliente -->
+                <a href="{% url 'cadastrar_cliente' %}" class="btn">Cadastrar Cliente</a>
+
+                <!-- Link para visualizar todos os clientes cadastrados -->
+                <a href="{% url 'lista_clientes' %}" class="btn">Ver Todos os Clientes</a>
+
     </main>
 
-    <!-- Rodapé -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Loja do Seu Zé - Todos os direitos reservados</p>
         </div>
     </footer>
-
 </body>
 </html>
