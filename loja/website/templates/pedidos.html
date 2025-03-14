@@ -23,35 +23,41 @@
         </div>
     </header>
 
-    <section class="featured-products">
-        <div class="container">
-            <h2>Pedidos Realizados</h2>
-            {% if pedidos %}
-                <table class="tabela-pedidos">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Cliente</th>
-                            <th>Produto</th>
-                            <th>Data do Pedido</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for pedido in pedidos %}
-                        <tr>
-                            <td>{{ pedido.id }}</td>
-                            <td>{{ pedido.cli_id.cli_nome }}</td>
-                            <td>{{ pedido.pro_id.pro_nome }}</td>
-                            <td>{{ pedido.ped_data|date:"d/m/Y" }}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            {% else %}
-                <p>Nenhum pedido encontrado.</p>
-            {% endif %}
-        </div>
-    </section>
+ <section class="featured-products">
+    <div class="container">
+        <h2>Pedidos Realizados</h2>
+        {% if pedidos %}
+            <table class="tabela-pedidos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Produto</th>
+                        <th>Data do Pedido</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pedido in pedidos %}
+                    <tr>
+                        <td>{{ pedido.id }}</td>
+                        <td>{{ pedido.cli_id.cli_nome }}</td>
+                        <td>{{ pedido.pro_id.pro_nome }}</td>
+                        <td>{{ pedido.ped_data|date:"d/m/Y" }}</td>
+                        <td>
+                            <a href="{% url 'editar_pedido' pedido.id %}" class="btn-editar">Editar</a>
+                            <a href="{% url 'excluir_pedido' pedido.id %}" class="btn-excluir" onclick="return confirm('Deseja realmente excluir este pedido?');">Excluir</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Nenhum pedido encontrado.</p>
+        {% endif %}
+    </div>
+</section>
+
 
     <footer>
         <div class="container">

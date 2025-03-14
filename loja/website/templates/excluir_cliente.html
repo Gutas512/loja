@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Clientes - Loja do Seu Zé</title>
-
+    <title>Excluir Cliente - Loja do Seu Zé</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -24,23 +23,14 @@
 
     <main>
         <div class="container">
-            <h2>Clientes Cadastrados</h2>
+            <h2>Confirmar Exclusão</h2>
+            <p>Tem certeza que deseja excluir o cliente <strong>{{ cliente.cli_nome }}</strong>?</p>
 
-            <a href="{% url 'clientes' %}" class="btn-voltar">Voltar para Clientes</a>
-
-            <ul>
-                {% for cliente in clientes %}
-                    <li>
-                        <strong>{{ cliente.cli_nome }}</strong> - {{ cliente.cli_email }} - {{ cliente.cli_telefone }}
-
-                        <!-- Botões de Ações -->
-                        <a href="{% url 'editar_cliente' cliente.id %}" class="btn-editar">Editar</a>
-                        <a href="{% url 'excluir_cliente' cliente.id %}" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este cliente?');">Excluir</a>
-                    </li>
-                {% empty %}
-                    <p>Nenhum cliente cadastrado.</p>
-                {% endfor %}
-            </ul>
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn-excluir">Confirmar Exclusão</button>
+                <a href="{% url 'lista_clientes' %}" class="btn-voltar">Cancelar</a>
+            </form>
         </div>
     </main>
 

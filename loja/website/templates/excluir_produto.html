@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Produto - Loja do Seu Zé</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Loja do Seu Zé</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Início</a></li>
+                    <li><a href="{% url 'produtos' %}">Produtos</a></li>
+                    <li><a href="{% url 'lista_pedidos' %}">Pedidos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Confirmar Exclusão</h2>
+            <p>Tem certeza que deseja excluir o produto <strong>{{ produto.pro_nome }}</strong>?</p>
+
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn-excluir">Confirmar Exclusão</button>
+                <a href="{% url 'lista_produtos' %}" class="btn-voltar">Cancelar</a>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Loja do Seu Zé - Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

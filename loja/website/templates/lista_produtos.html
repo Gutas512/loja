@@ -24,25 +24,32 @@
         </div>
     </header>
 
-    <!-- Seção de produtos em destaque -->
-    <section class="featured-products">
-        <div class="container">
-            <h2>Produtos Cadastrados</h2>
-            <div class="product-cards">
-                {% for produto in produtos %}
-                    <div class="product-card">
-                        <img src="{{ produto.pro_imagem.url }}" alt="{{ produto.pro_nome }}">
-                        <h3>{{ produto.pro_nome }}</h3>
-                        <p>{{ produto.pro_descricao }}</p>
-                        <p class="price">R$ {{ produto.pro_preco }}</p>
-                        <a href="{% url 'cadastrar_pedido' produto.id %}" class="btn">Comprar</a>
+   <!-- Atualize seu template de produtos (o mesmo que você colou acima) com os botões abaixo dentro do loop de produtos -->
+<section class="featured-products">
+    <div class="container">
+        <h2>Produtos Cadastrados</h2>
+        <div class="product-cards">
+            {% for produto in produtos %}
+                <div class="product-card">
+                    <img src="{{ produto.pro_imagem.url }}" alt="{{ produto.pro_nome }}">
+                    <h3>{{ produto.pro_nome }}</h3>
+                    <p>{{ produto.pro_descricao }}</p>
+                    <p class="price">R$ {{ produto.pro_preco }}</p>
+                    <a href="{% url 'cadastrar_pedido' produto.id %}" class="btn">Comprar</a>
+
+                    <!-- Botões Editar e Excluir -->
+                    <div class="product-actions">
+                        <a href="{% url 'editar_produto' produto.id %}" class="btn-editar">Editar</a>
+                        <a href="{% url 'excluir_produto' produto.id %}" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a>
                     </div>
-                {% empty %}
-                    <p>Nenhum produto cadastrado.</p>
-                {% endfor %}
-            </div>
+                </div>
+            {% empty %}
+                <p>Nenhum produto cadastrado.</p>
+            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Rodapé -->
     <footer>

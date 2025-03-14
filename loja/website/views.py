@@ -76,6 +76,62 @@ def cadastrar_pedido(request, produto_id):
 
     return render(request, 'cadastrar_pedido.html', {'produto': produto, 'clientes': clientes})
 
+# Editar cliente
+def editar_cliente(request, cliente_id):
+    cliente = Cliente.objects.get(id=cliente_id)
+    if request.method == 'POST':
+        form = ClienteForm(request.POST, instance=cliente)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_clientes')
+    else:
+        form = ClienteForm(instance=cliente)
+    return render(request, 'editar_cliente.html', {'form': form})
+
+# Excluir cliente
+def excluir_cliente(request, cliente_id):
+    cliente = Cliente.objects.get(id=cliente_id)
+    if request.method == 'POST':
+        cliente.delete()
+        return redirect('lista_clientes')
+    return render(request, 'excluir_cliente.html', {'cliente': cliente})
+
+def editar_produto(request, produto_id):
+    produto = Produto.objects.get(id=produto_id)
+    if request.method == 'POST':
+        form = ProdutoForm(request.POST, request.FILES, instance=produto)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_produtos')
+    else:
+        form = ProdutoForm(instance=produto)
+    return render(request, 'editar_produto.html', {'form': form})
+
+def excluir_produto(request, produto_id):
+    produto = Produto.objects.get(id=produto_id)
+    if request.method == 'POST':
+        produto.delete()
+        return redirect('lista_produtos')
+    return render(request, 'excluir_produto.html', {'produto': produto})
+
+def editar_pedido(request, pedido_id):
+    pedido = Pedido.objects.get(id=pedido_id)
+    if request.method == 'POST':
+        form = PedidoForm(request.POST, instance=pedido)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_pedidos')
+    else:
+        form = PedidoForm(instance=pedido)
+    return render(request, 'editar_pedido.html', {'form': form})
+
+def excluir_pedido(request, pedido_id):
+    pedido = Pedido.objects.get(id=pedido_id)
+    if request.method == 'POST':
+        pedido.delete()
+        return redirect('lista_pedidos')
+    return render(request, 'excluir_pedido.html', {'pedido': pedido})
+
 
 def index(request):
     return render(request, 'index.html')
